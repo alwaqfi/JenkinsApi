@@ -7,6 +7,7 @@ pipeline {
         DOCKER_REGISTRY = '-'  // Update with your registry
         BUILD_CONFIG = 'Release'
         CONFIG_FILE = 'docker-build.config'  // Config file name next to Dockerfile
+        PROJECTS=[]
     }
     
     stages {
@@ -45,7 +46,7 @@ pipeline {
                         }
                     }
                     
-                    PROJECTS = dockerProjects
+                    env.PROJECTS = dockerProjects
                     echo "Discovered projects: ${PROJECTS}"
                 }
             }
