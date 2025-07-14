@@ -3,8 +3,8 @@ pipeline {
     
     environment {
         DOTNET_CLI_TELEMETRY_OPTOUT = '1'
-        SOLUTION_FILE = 'QuartraxHR.sln'  // Update with your solution name
-        DOCKER_REGISTRY = '408044043502.dkr.ecr.eu-west-1.amazonaws.com/hr/'  // Update with your registry
+        SOLUTION_FILE = 'JenkinsApi.sln'  // Update with your solution name
+        DOCKER_REGISTRY = '-'  // Update with your registry
         BUILD_CONFIG = 'Release'
         CONFIG_FILE = 'docker-build.config'  // Config file name next to Dockerfile
     }
