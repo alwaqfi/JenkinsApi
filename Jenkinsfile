@@ -47,7 +47,7 @@ pipeline {
                     }
                     
                     //env.PROJECTS = dockerProjects
-                    echo "Discovered projects: ${PROJECTS}"
+                    //echo "Discovered projects: ${PROJECTS}"
                 }
             }
         }
