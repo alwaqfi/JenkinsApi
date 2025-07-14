@@ -95,7 +95,7 @@ pipeline {
         always {
             script {
                 // Print all built images
-                PROJECTS.each { project ->
+                env.PROJECTS.each { project ->
                     def envVar = "IMAGE_${project.image.toUpperCase()}"
                     echo "${project.image}: ${env[envVar]}"
                 }
