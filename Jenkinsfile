@@ -1,3 +1,4 @@
+def PROJECTS = []
 pipeline {
     agent none
     
@@ -46,8 +47,8 @@ pipeline {
                         }
                     }
                     
-                    //env.PROJECTS = dockerProjects
-                    //echo "Discovered projects: ${PROJECTS}"
+                    PROJECTS = dockerProjects
+                    echo "Discovered projects: ${PROJECTS}"
                 }
             }
         }
