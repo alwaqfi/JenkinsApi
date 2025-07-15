@@ -30,8 +30,7 @@ pipeline {
                         def projectDir = dockerFile.path.split('/Dockerfile')[0]
                         def configFile = "${projectDir}/${CONFIG_FILE}"
                         
-                        println projectDir
-                        println configFile
+                        println "I'm here ${projectDir}/${CONFIG_FILE}"
 
                         if (fileExists(configFile)) {
                             // Read image name from config file
