@@ -54,16 +54,16 @@ pipeline {
         }
     }
     
-    post {
-        always {
-            script {
-                // Print all built images
-                env.PROJECTS.each { project ->
-                    def envVar = "IMAGE_${project.image.toUpperCase()}"
-                    echo "${project.image}: ${env[envVar]}"
-                }
-            }
-            cleanWs()
-        }
-    }
+    // post {
+    //     always {
+    //         script {
+    //             // Print all built images
+    //             env.PROJECTS.each { project ->
+    //                 def envVar = "IMAGE_${project.image.toUpperCase()}"
+    //                 echo "${project.image}: ${env[envVar]}"
+    //             }
+    //         }
+    //         cleanWs()
+    //     }
+    // }
 }
