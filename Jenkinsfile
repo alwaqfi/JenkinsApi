@@ -13,9 +13,7 @@ pipeline {
     
     stages {
         stage('Checkout') {
-            agent {
-                label 'agent' 
-            }
+            agent any
             steps {
                 checkout scm
             }
@@ -56,44 +54,6 @@ pipeline {
                 }
             }
         }
-        
-    //     stage('Build Docker Images') {
-    //         parallel {
-    //             script {
-    //                 PROJECTS.each { project ->
-    //                     stage("Build ${project.image}") {
-    //                         agent {
-    //                             label 'docker-agent'
-    //                         }
-    //                         steps {
-    //                             script {
-    //                                 dir(project.context) {
-    //                                     // Build .NET project
-    //                                     bat "dotnet build --configuration ${BUILD_CONFIG} --no-restore"
-                                        
-    //                                     // Read version from project (optional)
-    //                                     def version = sh(
-    //                                         script: 'dotnet gitversion /showvariable SemVer',
-    //                                         returnStdout: true
-    //                                     ).trim()
-                                        
-    //                                     // Build Docker image
-    //                                     def fullImageName = "${DOCKER_REGISTRY}/${project.image}:${version}-${env.BUILD_NUMBER}"
-    //                                     bat "docker build -t ${fullImageName} -f ${project.dir}/Dockerfile ."
-                                        
-    //                                     // // Push to registry
-    //                                     // bat "docker push ${fullImageName}"
-                                        
-    //                                     // Store image reference for deployment
-    //                                     env["IMAGE_${project.image.toUpperCase()}"] = fullImageName
-    //                                 }
-    //                             }
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     }
     }
     
     post {
