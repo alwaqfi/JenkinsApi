@@ -1,6 +1,6 @@
 def PROJECTS = []
 pipeline {
-    agent any
+    agent none
     
     environment {
         DOTNET_CLI_TELEMETRY_OPTOUT = '1'
@@ -20,7 +20,9 @@ pipeline {
         }
         
         stage('Discover Projects') {
-            agent any
+            agent {
+                lable 'agent'
+            }
             steps {
                 script {
                     // Find all Dockerfiles and their config files
