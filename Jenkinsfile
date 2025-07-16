@@ -21,7 +21,7 @@ pipeline {
         
         stage('Discover Projects') {
             agent {
-                lable 'agent'
+                label 'agent'
             }
             steps {
                 script {
