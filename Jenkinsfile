@@ -52,9 +52,11 @@ pipeline {
                 }
             }
         }
-                    stage('Continous Delivery') {
-                input 'Wait for Approval From Team Leader'    
-            }
+         stage('Continous Delivery') {
+             steps {
+               input 'Wait for Approval From Team Leader'    
+             }
+        }
     }
 
     // post {
