@@ -53,7 +53,8 @@ pipeline {
             }
         }
     }
-    
+    stage('Continous Delivery') {
+        input 'Wait for Approval From Team Leader'    }
     // post {
     //     always {
     //         script {
