@@ -20,9 +20,7 @@ pipeline {
         }
         
         stage('Discover Projects') {
-            agent {
-                label 'agent'
-            }
+            agent any
             steps {
                 script {
                     // Find all Dockerfiles and their config files
