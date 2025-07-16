@@ -43,7 +43,7 @@ pipeline {
                             ]
                         } else {
                             // Fallback to directory name
-                           println "Error: config file not found in${projectDir}"
+                         error('Failed to build')
                         }
                     }
                     
