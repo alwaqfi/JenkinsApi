@@ -14,18 +14,21 @@ pipeline {
     }
     
     stages {
-        stage('Checkout') {
-            agent any
-            steps {
-                checkout scm
-            }
-        }
+        // stage('Checkout') {
+        //     agent any
+        //     steps {
+        //         checkout scm
+        //     }
+        // }
         
         stage('Discover Projects') {
             agent {
                 label 'agent' 
             }
             steps {
+                steps {
+                    checkout scm
+                }
                 script {
                     // Find all Dockerfiles and their config files
                     def dockerProjects = []
