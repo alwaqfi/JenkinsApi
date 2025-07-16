@@ -51,10 +51,10 @@ pipeline {
                     echo "Discovered projects: ${PROJECTS}"
                 }
             }
-            stage('Continous Delivery') {
+        }
+                    stage('Continous Delivery') {
                 input 'Wait for Approval From Team Leader'    
             }
-        }
     }
 
     // post {
